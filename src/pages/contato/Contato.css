@@ -1,0 +1,59 @@
+.linhaContato {
+    border: 1px solid #EF8C0A;
+    width: 180px;
+    background-color: #EF8C0A;
+}
+
+.tituloInicialContato{
+    font-size: 24px !important;
+    align-items: center;
+    justify-content: center;
+    color: #F04644;
+    padding-left: 200px !important;
+    padding-right: 200px !important;
+}
+
+.containerContato{
+    max-width: 1120px;
+    margin: 0 auto!important;
+    margin-bottom: 60px !important;
+}
+
+.titleContainer-Contato{
+    padding: 10px!important;
+    display: flex!important;
+    justify-content: space-between!important;
+    flex-direction: column;
+    align-items: center!important;
+    margin-top: 40px!important;
+}
+
+.cardCompleto-Contato{
+    width: 100%;
+    padding: 10px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxTexto-Contato{
+    border: 2px solid #EF8C0A;
+    background-color: #ffffff;
+    border-radius: 25px;
+    padding: 20px;
+}
+
+.formularioContato{
+    columns: auto;
+}
+
+.boxBotaoContato{
+    color: #ffffff !important;
+    text-transform: none !important;
+    background-color: #EF8C0A !important;
+    border-radius: 20px!important;
+    width: 135px!important;
+    height: 30px!important;
+    margin-left: 15px !important;
+}

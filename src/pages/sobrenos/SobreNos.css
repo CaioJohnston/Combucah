@@ -1,0 +1,94 @@
+.sobrenos-container{
+    max-width: 1120px;
+    margin: 0 auto!important;
+    margin-bottom: 60px !important;
+}
+
+.title-container{
+    padding: 10px!important;
+    display: flex!important;
+    justify-content: space-between!important;
+    flex-direction: column;
+    align-items: center!important;
+    margin-top: 40px!important;
+}
+
+.tituloInicial{
+    font-size: 24px !important;
+    align-items: center;
+    justify-content: center;
+    color: #F04644;
+    padding-left: 300px !important;
+    padding-right: 300px !important;
+    
+}
+
+.linha {
+    border: 1px solid #EF8C0A;
+    width: 180px;
+    background-color: #EF8C0A;
+}
+
+.card-fulano{
+    padding: 10px;
+    max-width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.cardCompleto{
+    width: 100%;
+    padding: 10px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cardCompleto2{
+    width: 100%;
+    padding: 10px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+.boxNome{
+    color: #F04644 !important;
+    text-transform: none !important;
+    background-color: #ffffff !important;
+    border: 2px solid #EF8C0A!important;
+    border-radius: 20px!important;
+    width: 135px!important;
+    height: 30px!important;
+    margin-left: 15px !important;
+}
+.avatarSobreNos{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+.text-sobrenos{
+    font-size: 14px !important;
+    padding: 20px;
+    margin-top: 20px!important;
+    color: #316D38 !important;
+}
+
+.boxTexto{
+    border: 2px solid #EF8C0A;
+    background-color: #ffffff;
+    border-radius: 25px;
+    padding: 20px;
+    
+}
+
+.redessociais{
+    display: flex;
+    justify-content: flex-end!important;
+    margin-right: 2px;
+    color: #316D38;
+    text-decoration: none;
+}

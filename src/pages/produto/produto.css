@@ -1,0 +1,216 @@
+.produto{
+    max-width: 1120px;
+    margin: 0 auto;
+}
+
+.sessaoTopo{
+    width: 100%;
+    display: flex;
+}
+.imagemProduto{
+    flex: 2;
+    padding: 20px;
+}
+
+.imagemProdutoPrincipal{
+    width: 450px;
+    height: 450px;
+}
+.imagemProdutoMini{
+    margin: 10px 20px 0 0;
+    width: 90px;
+    height: 90px;
+}      
+.resumoProduto{
+    flex: 3;
+    padding: 20px;
+}
+
+.imagemAnunciante{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.avatar{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 20px;
+    object-fit: cover;
+}
+
+.comprarProduto{
+    margin-top: 10px;
+}
+
+.preco{
+    margin-left: 10px;
+}
+
+.quantidade{
+    background: #fff;
+    border: 2px solid #4CAF4F;
+    display: flex;
+    align-items: center;
+    border-radius: 25px;
+    width: 270px;
+    height: 33px;
+    font-size: 24px;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+}
+.adicionar, .remover{
+    width: 33%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px;
+    cursor: pointer;
+    text-shadow: 0px 5px 5px rgba(0,0,0,);
+}
+.quantidade > input{
+    width: 33%;
+    height: 100%;
+    text-align: center;
+    border: none;
+    outline: none;
+    background: transparent;
+    border-right: 2px solid #4CAF4F;
+    border-left: 2px solid #4CAF4F;
+}
+input[type="number"] {
+    -webkit-appearance: textfield;
+       -moz-appearance: textfield;
+            appearance: textfield;
+  }
+  input[type=number]::-webkit-inner-spin-button, 
+  input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+  }
+  .btnComprar {
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #4CAF4F;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btnComprar:hover {
+    background-color: #66BB6A; /* Cor de fundo ao passar o mouse */
+}
+
+
+
+.tituloDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    background: #fff;
+    border: 2px solid #4CAF4F;
+    border-radius: 25px;
+    padding: 10px;
+    margin-left: 20px;
+    color: #4CAF4F;
+    height: fit-content;
+}
+
+.tituloInicial{
+    color: #4CAF4F!important;
+}
+
+.conteudoDiv{
+    background: #fff;
+    border: 2px solid #4CAF4F;
+    border-radius: 25px;
+    position: relative;
+    padding: 20px;
+}
+.selo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+.descricao{
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.containerSobrePoliticas{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.m-l20{
+    margin-left: 20px;
+}
+
+.avaliacoes, .talvezVoceGoste{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.comentario{
+    background: #fff;
+    border: 2px solid #4CAF4F;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 32px;
+}
+
+.descricaoComentario{
+    width: 100%;
+    font-size: 12px;
+}
+.avaliacoesComentarios{
+    padding: 10px;
+}
+
+.produtosRecomendados{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.linha {
+    height: 2px;
+    border: 1px solid #4CAF4F!important;
+}
+
+.tituloProduto {
+    display: flex;
+    align-items: center;
+  }
+  
+  .tts-button {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+    padding: 0;
+  }
+  .tts-button:hover {
+    color: #007bff;
+  }
+  

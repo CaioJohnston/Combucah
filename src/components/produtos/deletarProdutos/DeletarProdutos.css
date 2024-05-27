@@ -1,0 +1,35 @@
+.deletarProduto{
+    width: 1120px;
+    height: auto;
+    margin: 32px auto;
+}
+
+.cardDeletarContainer{
+    border: 2px solid #EF8C0A;
+    border-radius: 25px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botaoSim{
+    background-color: #F04644;
+    width: 200px;
+    border-radius: 25px;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.botaoNao{
+    background-color: #316D38;
+    width: 200px;
+    border-radius: 25px;
+    color: #fff;
+    border: none;
+    padding: 10px;
+}
+

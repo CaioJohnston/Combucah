@@ -1,0 +1,46 @@
+.listaProdutos{
+    width: 1120px;
+    margin: 32px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.boxAtualizar{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #EF8C0A;
+    border-radius: 5px;
+    background: #fff;
+}
+
+.cardProdutoLista{
+    border: none!important;
+    border-radius: 25px!important;
+
+}
+
+.boxBotoes{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.botaoEditar{
+    background-color: #316D38;
+    width: 90px;
+    border-radius: 25px;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    margin-right: 20px;
+}
+.botaoDeletar{
+    background-color: #F04644;
+    width: 90px;
+    border-radius: 25px;
+    color: #fff;
+    border: none;
+    padding: 10px;
+}

@@ -1,0 +1,75 @@
+/* #4CAF4F */
+.cardProdutoContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 225px;
+    height: 100%;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.cardTopo {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+}
+
+.cardImagem {
+    width: 230px;
+    height: 200px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.cardImagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cardDescricao {
+    width: 230px;
+    height: 130px!important;
+    padding: 5px!important;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardBottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 5px!important;
+    margin: 0!important;
+    border-radius: 0 0 8px 8px;
+    border-top: #4CAF4F 0.5px solid;
+}
+
+.cardProdutoContainer:hover {
+    box-shadow: 0px 0px 10px #4CAF4F;
+    transform: scale(1.03);
+}
+
+.cardDescricao:hover, .cardTopo:hover {
+    background-color: #fff!important;
+}
+
+.btnVerProduto {
+    background-color: transparent!important;
+    color: #316D38!important;
+    border: none!important;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    
+}

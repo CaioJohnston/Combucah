@@ -1,0 +1,15 @@
+.categoriaNome{
+    width: 1120px;
+    margin: 32px auto;
+}
+
+.categoriaNomeHeader{
+    display: flex;
+}
+
+.linhaCategoria{
+    border: 1px solid #4CAF4F;
+    width: 180px;
+    background-color: #4CAF4F;
+    height: 1px;
+}

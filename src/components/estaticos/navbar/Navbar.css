@@ -1,0 +1,137 @@
+.top-app-bar-container{
+    height: 35px;
+    border-radius: 0px 0px 25px 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #e6e7ee!important;
+}
+.top-toolbar{
+    display: flex;
+    justify-content: space-between!important;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    max-width: 1120px;
+}
+
+.texto-logcad{
+    font-family: 'Inter' !important;
+    font-weight: 200;
+    font-size: 12px !important;
+    text-transform: none !important;
+}
+.botoes-top{
+    width: 100%;
+    color: black!important;
+    text-transform: none;
+}
+.botoes-login-cadastro{
+    width: 100%;
+    color: #4CAF4F!important;
+    text-transform: none;
+    
+}
+
+.botoesNav{
+    width: 65%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    color: #4CAF4F;
+    margin-left: 30%;
+}
+
+/* 2 parte do navbar */
+.app-bar-container{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    color: #4CAF4F!important;
+    background: transparent!important;
+    box-shadow: none!important;
+}
+.search{
+    margin-right: 24px;
+    margin-top: 10px !important;
+    width: 250px !important;
+    height: 30px !important;
+    border-color: #4CAF4F!important;
+}
+
+.buscar{
+    font-size: 12px !important;
+    
+}
+
+.box-botoes-sobrenos-contato{
+    color: #4CAF4F!important;
+    max-width: 1120px;
+    width: 100%;
+    margin-top: 5px;
+    margin-right: 90px;
+    display: flex;
+    justify-content: flex-end!important;
+    align-items: center;
+    text-transform: none;
+}
+.botoes-sobrenos-contato {
+    color: #4CAF4F!important;
+    border-radius: 25px!important;
+    width: 120px!important;
+    text-transform: none !important;
+    font-size: 12px !important;
+}
+.botoes-sobrenos-contato-cont {
+    color: #4CAF4F!important;
+    border-radius: 25px!important;
+    width: 80px!important;
+    text-transform: none !important;
+    font-size: 12px !important;
+}
+.header-toolbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    max-width: 1120px;
+}
+
+.icones{
+    color: #4CAF4F;
+    margin-right: 20px;
+    margin-left: 5px;
+    font-size: 30px!important;
+    margin-bottom: 5px !important;
+    margin-top: 20px !important;
+}
+
+.nav-botoes{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 60%;
+    height: 100%;
+    max-width: 1120px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    
+}
+.botao-nav{
+    border: 2px solid #4CAF4F!important;
+    color: #4CAF4F!important;
+    border-radius: 20px!important;
+    width: 120px!important;
+    height: 25px!important;
+    font-size: 12.5px!important;
+    text-transform: none!important;
+    background-color: #fff!important;
+}
+
+.logo{
+    image-rendering: optimizeQuality !important;
+    width: 160px !important;
+    margin-top: 30px !important;
+    margin-left: 30px !important;
+}

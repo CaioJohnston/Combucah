@@ -1,0 +1,22 @@
+.listaCategorias{
+    max-width: 1120px;
+    margin: 32px auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.cardCategoria{
+    border: 2px solid #EF8C0A;
+    background: #fff;
+    width: 250px;
+    padding: 20px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tituloCategoria{
+    font-size: 24px;
+}
