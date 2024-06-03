@@ -17,7 +17,7 @@ function CardProduto({nome, descricao, preco, imagem, id=0} : any) {
           <Typography variant="h6">
             {nome}
           </Typography>
-          <Typography variant="body2" color="textSecondary" style={{ fontSize: "12px" }}>
+          <Typography variant="body2" color="textSecondary" style={{ fontSize: "11px" }}>
             {descricao}
           </Typography>
         </CardContent>

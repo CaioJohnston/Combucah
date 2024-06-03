@@ -1,63 +1,93 @@
-.perfil-loja {
-    width: 100%;
-    text-align: center;
-  }
-  
-  .fotoFundo {
-    position: relative;
-    width: 100%;
-    height: 300px;
-    overflow: hidden;
-  }
-  
-  .fotoFundoImg {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
-  
-  .sessaoTopo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: -100px;
-  }
-  
-  .logo img {
-    width: 150px;
-    height: auto;
-    border: 5px solid white;
-    border-radius: 50%;
-    background-color: white;
-  }
-  
-  .bio {
-    margin-top: 20px;
-    padding: 0 20px;
-  }
-  
-  .bio h1 {
-    margin-bottom: 10px;
-  }
-  
-  .selo {
-    width: 20px;
-    height: 20px;
-    margin-left: 10px;
-  }
-  
-  .produtosRecomendados {
-    margin-top: 40px;
-  }
-  
-  .produtosRecomendados h2 {
-    margin-bottom: 20px;
-  }
-  
-  .produtos {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-  
+.perfil-Loja {
+  width: 100%;
+  text-align: center;
+}
+
+.perfil-Loja .fotoFundo {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.perfil-Loja .fotoFundoImg {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.perfil-Loja .sessaoTopo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -100px;
+}
+
+.perfil-Loja .logo img {
+  width: 150px;
+  height: auto;
+  border-radius: 50%;
+  background-color: white;
+  left: 46.3%;
+  top: 470px;
+  position: absolute;
+}
+
+.perfil-Loja .bio {
+  margin-top: 20px;
+  padding: 0 20px;
+}
+
+.perfil-Loja .bio p {
+  position: absolute;
+  border: 2px solid #4CAF4F !important;
+  left: 385px;
+  bottom: 50px;
+  width: 60%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue'!important;
+}
+
+.perfil-Loja .bio h1 {
+  margin-bottom: 10px;
+  position: absolute;
+  top: 630px;
+  left: 37.6%;
+  color: white;
+  font-weight: bold;
+}
+
+.perfil-Loja .selo {
+  width: 60px;
+  height: 60px;
+  margin-left: 10px;
+  position: absolute;
+  left: 71.2%;
+  top: 270px;
+}
+
+.perfil-Loja .produtosRecomendados {
+  margin-top: 240px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+
+.perfil-Loja .produtosRecomendados h2 {
+  margin-bottom: 20px;
+}
+
+.perfil-Loja .produtos {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.perfil-Loja .descricaoLoja {
+  align-items: center;
+  justify-content: center;
+}

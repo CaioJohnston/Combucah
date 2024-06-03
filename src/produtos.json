@@ -1,0 +1,88 @@
+[
+    {
+      "id": 1,
+      "nome": "Coruja de Miriti",
+      "descricao": "Uma linda coruja artesanal feita de miriti!",
+      "preco": 20.00,
+      "quantidade": 10,
+      "imagemPrincipal": "https://i.imgur.com/8Zdo0lt.jpg",
+      "imagemMini1": "https://i.imgur.com/JSrVQNq.jpeg",
+      "imagemMini2": "https://i.imgur.com/JSrVQNq.jpeg",
+      "imagemMini3": "https://i.imgur.com/JSrVQNq.jpeg",
+      "usuario": {
+        "nome": "Ygara Artesanal & Turismo"
+      },
+      "categoria": {
+        "nome": "Artesanato"
+      }
+    },
+    {
+      "id": 2,
+      "nome": "Arara",
+      "descricao": "Uma bela arara feita de miriti.",
+      "preco": 25.00,
+      "quantidade": 5,
+      "imagemPrincipal": "https://i.imgur.com/DcZyEQw.png",
+      "imagemMini1": "https://i.imgur.com/DcZyEQw.png",
+      "imagemMini2": "https://i.imgur.com/DcZyEQw.png",
+      "imagemMini3": "https://i.imgur.com/DcZyEQw.png",
+      "usuario": {
+        "nome": "Ygara Artesanal & Turismo"
+      },
+      "categoria": {
+        "nome": "Artesanato"
+      }
+    },
+    {
+        "id": 3,
+        "nome": "Arara Dourada",
+        "descricao": "Essa é rara!",
+        "preco": 50.00,
+        "quantidade": 5,
+        "imagemPrincipal": "https://i.imgur.com/VjwRyWY.png",
+        "imagemMini1": "https://i.imgur.com/VjwRyWY.png",
+        "imagemMini2": "https://i.imgur.com/VjwRyWY.png",
+        "imagemMini3": "https://i.imgur.com/VjwRyWY.png",
+        "usuario": {
+          "nome": "Ygara Artesanal & Turismo"
+        },
+        "categoria": {
+          "nome": "Artesanato"
+        }
+      },
+      {
+        "id": 4,
+        "nome": "Tucano",
+        "descricao": "Tucano feito de miriti.",
+        "preco": 20.00,
+        "quantidade": 5,
+        "imagemPrincipal": "https://i.imgur.com/moeWhlq.png",
+        "imagemMini1": "https://i.imgur.com/moeWhlq.png",
+        "imagemMini2": "https://i.imgur.com/moeWhlq.png",
+        "imagemMini3": "https://i.imgur.com/moeWhlq.png",
+        "usuario": {
+          "nome": "Ygara Artesanal & Turismo"
+        },
+        "categoria": {
+          "nome": "Artesanato"
+        }
+      },
+      {
+        "id": 5,
+        "nome": "Brincos",
+        "descricao": "Os mais bonitos da amazônia!",
+        "preco": 40.00,
+        "quantidade": 5,
+        "imagemPrincipal": "https://i.imgur.com/O4q0efo.jpeg",
+        "imagemMini1": "https://i.imgur.com/O4q0efo.jpeg",
+        "imagemMini2": "https://i.imgur.com/O4q0efo.jpeg",
+        "imagemMini3": "https://i.imgur.com/O4q0efo.jpeg",
+        "usuario": {
+          "nome": "Ygara Artesanal & Turismo"
+        },
+        "categoria": {
+          "nome": "Artesanato"
+        }
+      }
+  ]
+  

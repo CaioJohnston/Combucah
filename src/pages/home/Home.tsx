@@ -8,6 +8,10 @@ import Produto from "../../models/Produto";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../store/tokens/tokensReduce";
 import coruja from "../../assets/imgs/coruja.jpeg";
+import arara from '../../assets/imgs/arara.png';
+import araradourada from '../../assets/imgs/araradourada.png';
+import tucano from '../../assets/imgs/tucano.png';
+import brincos from '../../assets/imgs/brincos.jpeg';
 
 function Home() {
 
@@ -67,7 +71,11 @@ function Home() {
           <hr className="linha" />
         </div>
         <div className="produtosRecomendados produtosRecomendadosHome">
-          <CardProduto imagem={coruja} nome={"Coruja"} descricao={"Coruja de madeira"} preco={'20,00'} />
+          <CardProduto imagem={coruja} nome={"Coruja"} descricao={"Coruja de miriti."} preco={'20,00'} id={1} />
+          <CardProduto imagem={arara} nome={"Arara"} descricao={"Arara de miriti."} preco={'20,00'} id={2} />
+          <CardProduto imagem={araradourada} nome={"Arara Dourada"} descricao={"Essa é rara."} preco={'20,00'} id={3} />
+          <CardProduto imagem={tucano} nome={"Tucano"} descricao={"Tucano feito de miriti."} preco={'20,00'} id={4} />
+          <CardProduto imagem={brincos} nome={"Brincos"} descricao={"Os mais bonitos da amazônia!"} preco={'20,00'} id={5} />
         </div>
       </Grid>
     </>
