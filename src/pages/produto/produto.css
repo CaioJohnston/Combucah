@@ -209,8 +209,8 @@ input[type="number"] {
     cursor: pointer;
     margin-left: 10px;
     padding: 0;
+    width: 22px;
   }
   .tts-button:hover {
-    color: #007bff;
+    background-color: #4CAF4F!important;
   }
-  

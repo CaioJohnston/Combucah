@@ -111,7 +111,7 @@ function Navbar() {
           <Box className="botoesNav" >
             <Link to="/login" className="text-decorator-none cursor">
               <Button className="texto-logcad botoes-login-cadastro" color="inherit">
-                Login
+                Entrar
               </Button>
             </Link>{" "}
             |{" "}
@@ -161,12 +161,12 @@ function Navbar() {
           </Button>
         </Box>
         <Box className="nav-botoes">
-          <Link  to='/categorias/nome/{artesanato}'>
-          <Button variant="text" className="botao-nav">Artesanato</Button>
+          <Link  to='/categorias/nome/{lojas}'>
+          <Button variant="text" className="botao-nav">Lojas</Button>
           </Link>
 
-          <Link to='/categorias/nome/{acessorios}' >
-          <Button variant="text" className="botao-nav">Acessórios</Button>
+          <Link to='/categorias/nome/{artesanato}' >
+          <Button variant="text" className="botao-nav">Artesanato</Button>
           </Link>
 
           <Link to='/categorias/nome/{promocao}' >

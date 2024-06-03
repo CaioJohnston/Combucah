@@ -1,56 +1,60 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import CardProduto from "../../components/cardproduto/CardProduto";
-import { buscaId } from "../../services/Service";
 import "./produto.css";
+import CardProduto from "../../components/cardproduto/CardProduto";
 import ygara from "../../assets/imgs/ygara.png";
+import verificado from "../../assets/imgs/verificado.png";
 import vinicius from "../../assets/imgs/Vinicius.png";
 import caio from "../../assets/imgs/Caio.png";
-import coruja from "../../assets/imgs/coruja.jpeg";
-import coruja2 from "../../assets/imgs/coruja2.jpeg";
-import verificado from "../../assets/imgs/verificado.png";
-import arara from "../../assets/imgs/arara.png";
-import araradourada from "../../assets/imgs/araradourada.png";
-import tucano from "../../assets/imgs/tucano.png";
-import brincos from "../../assets/imgs/brincos.jpeg";
+import produtosData from "../../produtos.json";
 
 export const Produto = () => {
-  const [quantidade, setQuantidade] = useState(0);
+  const [quantidade, setQuantidade] = useState(1);
   const { id } = useParams<{ id: string }>();
-  const [produto, setProduto] = useState<any>();
+  const [produto, setProduto] = useState<any>(null);
+  const [recomendacoes, setRecomendacoes] = useState<any[]>([]);
 
-  const token = "Basic ZmVsaXBlMkBlbWFpbC5jb206MTIzNDU2Nzg5";
 
   useEffect(() => {
-    if (id !== undefined) {
-      findById(id);
+    // Função para rolar para o topo da página
+    const scrollToTop = () => {
+      window.scrollTo({ top: 0});
+    };
+
+    scrollToTop(); // Chamada para rolar para o topo ao entrar na página
+  }, [id]); // Monitora mudanças no ID do produto para acionar o efeito
+
+  useEffect(() => {
+    if (id) {
+      console.log("ID do produto:", id);
+      // Encontrar o produto pelo ID
+      const produtoEncontrado = produtosData.find((produto: any) => produto.id === parseInt(id));
+      console.log("Produto encontrado:", produtoEncontrado);
+      setProduto(produtoEncontrado);
     }
   }, [id]);
 
-  async function findById(id: string) {
-    buscaId(`/produtos/${id}`, setProduto, {
-      headers: {
-        Authorization: token,
-      },
-    });
-  }
+  useEffect(() => {
+    if (produto) {
+      // Gerar recomendações de produtos com IDs diferentes do produto atual
+      const recomendacoesProdutos = produtosData.filter(
+        (p: any) => p.id !== produto.id
+      );
+      setRecomendacoes(recomendacoesProdutos.slice(0, 4)); // Mostrar apenas 4 recomendações
+    }
+  }, [produto]);
 
   const adicionar = () => {
-    setQuantidade(quantidade + 1);
+    if (produto && quantidade < produto.quantidade) {
+      setQuantidade(quantidade + 1);
+    }
   };
 
   const remover = () => {
-    setQuantidade(quantidade - 1);
+    if (quantidade > 1) {
+      setQuantidade(quantidade - 1);
+    }
   };
-
-  useEffect(() => {
-    if (quantidade < 1) {
-      setQuantidade(1);
-    }
-    if (quantidade > produto?.quantidade) {
-      setQuantidade(produto?.quantidade);
-    }
-  }, [quantidade]);
 
   const handleTextToSpeech = (text: string) => {
     var speech = new SpeechSynthesisUtterance();
@@ -59,6 +63,10 @@ export const Produto = () => {
     window.speechSynthesis.speak(speech);
   };
 
+  if (!produto) {
+    return <div>Carregando...</div>;
+  }
+
   return (
     <>
       <div className="produto">
@@ -66,59 +74,57 @@ export const Produto = () => {
           <div className="imagemProduto">
             <img
               className="imagemProdutoPrincipal"
-              src={coruja}
-              alt={produto?.nome}
+              src={produto.imagemPrincipal}
+              alt={produto.nome}
             />
             <img
-              src={coruja2}
+              src={produto.imagemMini1}
               className="imagemProdutoMini"
               alt="foto miniatura do produto"
             />
             <img
-              src={coruja2}
+              src={produto.imagemMini2}
               className="imagemProdutoMini"
               alt="foto miniatura do produto"
             />
             <img
-              src={coruja2}
+              src={produto.imagemMini3}
               className="imagemProdutoMini"
               alt="foto miniatura do produto"
             />
           </div>
           <div className="resumoProduto">
             <div className="tituloProduto">
-              <h1 className="title">{produto?.nome}Coruja de Miriti</h1>
+              <h1 className="title">{produto.nome}</h1>
               <button
                 className="tts-button"
-                onClick={() => handleTextToSpeech("Coruja de Miriti")}
+                onClick={() => handleTextToSpeech(produto.nome)}
               >
                 🔊
               </button>
             </div>
-            <p className="descricao">{produto?.descricao}</p>
+            <p className="descricao">{produto.descricao}</p>
             <div className="imagemAnunciante">
-              <Link to="/perfilloja">
-                <img className="avatar" src={ygara} alt="avatar" />
+              <Link to="/perfilloja" className="linkImage">
+                <img className="avatar" src={ygara} alt="avatar"/>
               </Link>
               <h2 className="nomeAnunciante">
-                {produto?.usuario?.nome
-                  ? produto?.usuario?.nome
-                  : "Ygara Artesanal & Turismo"}
+                {produto.usuario.nome}
               </h2>
             </div>
             <div className="comprarProduto">
-              <h4 className="preco">R$20,00</h4>
+              <h4 className="preco">R${produto.preco.toFixed(2)}</h4>
               <div className="quantidade">
-                <div className="adicionar" onClick={adicionar}>
-                  +
-                </div>
-                <input type="number" value={quantidade} readOnly />
                 <div className="remover" onClick={remover}>
                   -
                 </div>
+                <input type="number" value={quantidade} readOnly />
+                <div className="adicionar" onClick={adicionar}>
+                  +
+                </div>
               </div>
               <button className="btnComprar">Comprar</button>
-              <h4 className="categoria">Categoria: {produto?.categoria?.nome} Artesanato</h4>
+              <h4 className="categoria">Categoria: {produto.categoria.nome}</h4>
             </div>
           </div>
         </div>
@@ -129,9 +135,7 @@ export const Produto = () => {
               <div className="imagemAnunciante">
                 <img className="avatar" src={ygara} alt="avatar" />
                 <h2 className="nomeAnunciante">
-                  {produto?.usuario?.nome
-                    ? produto?.usuario?.nome
-                    : "Ygara Artesanal & Turismo"}
+                  {produto.usuario.nome}
                 </h2>
                 <img src={verificado} alt="selo-feito-a-mao" className="selo" />
               </div>
@@ -149,9 +153,9 @@ export const Produto = () => {
               <div className="tituloDiv">Sobre o produto</div>
               <div className="conteudoDiv">
                 <h2 className="tituloSobreProduto nomeAnunciante">
-                  {produto?.nome}Coruja de Miriti
+                  {produto.nome}
                 </h2>
-                <p className="descricao">{produto?.descricao}Um linda coruja artesanal feita de miriti. Perfeita para qualquer ambiente!</p>
+                <p className="descricao">{produto.descricao}</p>
               </div>
             </div>
             <div className="politicasEntrega m-l20">
@@ -198,32 +202,21 @@ export const Produto = () => {
           <hr className="linha" />
         </div>
         <div className="produtosRecomendados">
-          <CardProduto
-            nome="Arara"
-            descricao="Arara de madeira"
-            preco={"25,00"}
-            imagem={arara}
-          />
-          <CardProduto
-            nome="Arara Dourada"
-            descricao="Essa é rara!"
-            preco={"50,00"}
-            imagem={araradourada}
-          />
-          <CardProduto
-            nome="Tucano"
-            descricao="Tucano de madeira"
-            preco={"20,00"}
-            imagem={tucano}
-          />
-          <CardProduto
-            nome="Brincos"
-            descricao="Os mais bonitos da amazônia!"
-            preco={"40,00"}
-            imagem={brincos}
-          />
+        {recomendacoes.map((produtoRecomendado) => (
+            <CardProduto
+              key={produtoRecomendado.id}
+              nome={produtoRecomendado.nome}
+              descricao={produtoRecomendado.descricao}
+              preco={produtoRecomendado.preco}
+              imagem={produtoRecomendado.imagemPrincipal}
+              id={produtoRecomendado.id}
+            />
+          ))}
+          
         </div>
       </div>
     </>
   );
 };
+
+// Componente CardProduto (substitua pelas implementações reais dos cartões de produto)

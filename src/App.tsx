@@ -22,6 +22,7 @@ import { Produto } from './pages/produto/Produto';
 import CategoriaNome from './components/categorianome/CategoriaNome';
 import PerfilLoja from './pages/perfilLoja/PerfilLoja';
 
+
 function App() {
   useEffect(() => {
     var Tawk_API: { maximize: () => void; [key: string]: any; } = window.Tawk_API || {};
@@ -67,6 +68,7 @@ function App() {
             <Route path="/cadastroprodutos/:id" element={<CadastroProduto />} />
             <Route path="/deletarprodutos/:id" element={<DeletarProdutos />} />
             <Route path="/categorias/nome/:categoria" element={<CategoriaNome />} />
+            <Route path="/perfilloja" element={<PerfilLoja/>} />
           </Routes>
           <Footer />
         </Router>
