@@ -52,10 +52,10 @@ function Footer() {
               Contatos
             </Typography>
             <Typography variant="body1" className="footer-text">
-              <EmailIcon className="footer-icon" /> contato@combucah.com.br
+              <EmailIcon className="footer-icon" /> contatocombucah@gmail.com
             </Typography>
             <Typography variant="body1" className="footer-text">
-              <PhoneIcon className="footer-icon" /> (91) 94002-8922
+              <PhoneIcon className="footer-icon" /> (91) 98946-2131
             </Typography>
             <Typography
               variant="caption"

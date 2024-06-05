@@ -9,6 +9,7 @@
 
 .img-carrosel{
   width: 100%;
-  height: 320px;
+  height: 260px;
   object-fit: cover;
+  border-radius: 10px!important;
 }

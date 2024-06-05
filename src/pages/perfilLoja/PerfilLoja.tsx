@@ -1,35 +1,41 @@
-import React from 'react';
-import './perfilLoja.css'
-import ygara from '../../assets/imgs/ygara.png';
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import './perfilLoja.css';
 import verificado from '../../assets/imgs/verificado.png';
-import arara from '../../assets/imgs/arara.png';
-import araradourada from '../../assets/imgs/araradourada.png';
-import tucano from '../../assets/imgs/tucano.png';
-import brincos from '../../assets/imgs/brincos.jpeg';
 import CardProduto from '../../components/cardproduto/CardProduto';
-import fundoYgara from '../../assets/imgs/fundoYgara.png';
+import lojasData from "../../lojas.json";
 
 const PerfilLoja = () => {
+  const { id } = useParams<{ id: string }>();
+  const [loja, setLoja] = useState<any>(null);
+
+  useEffect(() => {
+    if (id) {
+      console.log("ID da loja:", id);
+      const lojaEncontrada = lojasData.find((loja: any) => loja.id === parseInt(id));
+      console.log("Loja encontrada:", lojaEncontrada);
+      setLoja(lojaEncontrada);
+    }
+  }, [id]);
+
+  if (!loja) {
+    return <div>Carregando...</div>;
+  }
+
   return (
     <>
       <div className='perfil-Loja'>
         <div className="fotoFundo">
-          <img src={fundoYgara} alt="Foto de Fundo" className="fotoFundoImg" />
+          <img src={loja.fundo} alt="Foto de Fundo" className="fotoFundoImg" />
         </div>
         <div className="sessaoTopo">
           <div className="descricaoLoja">
             <div className="logo">
-              <img src={ygara} alt="Ygara - Artesanal & Turismo" />
+              <img src={loja.logo} alt={loja.nome} />
             </div>
             <div className="bio">
-              <h1>Ygara - Artesanal & Turismo</h1>
-              <p>
-                No Ygara, valorizamos a sustentabilidade e a comunidade local,
-                garantindo que cada produto que você adquire contribua para a
-                preservação do meio ambiente e para o fortalecimento da economia
-                regional. Venha nos visitar e experimente um pedaço da Amazônia
-                em cada detalhe.
-              </p>
+              <h1>{loja.nome}</h1>
+              <p>{loja.descricao}</p>
               <img src={verificado} alt="Selo Verificado" className="selo" />
             </div>
           </div>
@@ -37,34 +43,16 @@ const PerfilLoja = () => {
         <div className="produtosRecomendados">
           <h2>Produtos Recomendados</h2>
           <div className="produtos">
-            <CardProduto
-              nome="Arara"
-              descricao="Arara de madeira"
-              preco={"25,00"}
-              imagem={arara}
-              id={2}
-            />
-            <CardProduto
-              nome="Arara Dourada"
-              descricao="Essa é rara!"
-              preco={"50,00"}
-              imagem={araradourada}
-              id={3}
-            />
-            <CardProduto
-              nome="Tucano"
-              descricao="Tucano de madeira"
-              preco={"20,00"}
-              imagem={tucano}
-              id={4}
-            />
-            <CardProduto
-              nome="Brincos"
-              descricao="Os mais bonitos da amazônia!"
-              preco={"40,00"}
-              imagem={brincos}
-              id={5}
-            />
+            {loja.produtos.map((produto: any) => (
+              <CardProduto
+                key={produto.id}
+                nome={produto.nome}
+                descricao={produto.descricao}
+                preco={produto.preco.toFixed(2)}
+                imagem={produto.imagem}
+                id={produto.id}
+              />
+            ))}
           </div>
         </div>
       </div>

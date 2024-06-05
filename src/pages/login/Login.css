@@ -17,6 +17,7 @@
     justify-content: space-around;
     align-items: center;
     padding: 20px;
+    margin-bottom: 115px;
 }
 .login-header, .login-header > h2{
     color: #000000;

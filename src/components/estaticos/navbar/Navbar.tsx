@@ -1,10 +1,9 @@
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import { Grid, InputBase, Typography } from "@mui/material";
+import { Box, InputBase, Typography } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { styled, alpha } from "@mui/material/styles";
 import PersonIcon from "@mui/icons-material/Person";
@@ -17,7 +16,6 @@ import { addToken } from "../../../store/tokens/actions";
 import { toast } from 'react-toastify';
 import { buscaNome } from "../../../services/Service";
 import logo from '../../../assets/imgs/logo.png';
-
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -49,7 +47,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: "inherit",
   "& .MuiInputBase-input": {
     padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create("width"),
     width: "100%",
@@ -62,29 +59,27 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-
 function Navbar() {
-
   let navigate = useNavigate();
   const dispatch = useDispatch();
-  const { categoria } =  useParams<{categoria: string}>();
+  const { categoria } = useParams<{ categoria: string }>();
   const [categorias, setCategorias] = React.useState<any>();
   const token = useSelector<TokenState, TokenState["tokens"]>(
     (state) => state.tokens
   );
 
-  React.useEffect(()=>{
-    if(categoria !== undefined || categoria != ""){
-        findByNome(`${categoria}`);
+  React.useEffect(() => {
+    if (categoria !== undefined || categoria !== "") {
+      findByNome(`${categoria}`);
     }
-  }, [categoria])
+  }, [categoria]);
 
-  async function findByNome(categoria: string){
-    buscaNome(`/categorias/nome/${categoria}`, setCategorias,{
-        headers: {
-            'Authorization': token
-        }
-    })
+  async function findByNome(categoria: string) {
+    buscaNome(`/categorias/nome/${categoria}`, setCategorias, {
+      headers: {
+        Authorization: token,
+      },
+    });
   }
 
   function goLogout() {
@@ -99,45 +94,18 @@ function Navbar() {
       theme: "colored",
       progress: undefined,
     });
-    navigate('/login')
+    navigate('/login');
   }
 
   var navbar;
 
   if (token === "") {
-    navbar = <Grid>
-      <AppBar position="static" className="top-app-bar-container" >
-        <Toolbar className="top-toolbar" >
-          <Box className="botoesNav" >
-            <Link to="/login" className="text-decorator-none cursor">
-              <Button className="texto-logcad botoes-login-cadastro" color="inherit">
-                Entrar
-              </Button>
-            </Link>{" "}
-            |{" "}
-            <Link to="/cadastrousuario" className="text-decorator-none cursor">
-              <Button className="texto-logcad botoes-login-cadastro" color="inherit">
-                Cadastrar
-              </Button>
-            </Link>
-          </Box>
-        </Toolbar>
-      </AppBar>
-      {/* PARTE 2 DO HEADER COMEÇA AQUI*/}
-      <AppBar position="static" className="app-bar-container" color="inherit">
-        <Toolbar className="header-toolbar">
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-          >
-            <Box >
-            <Link to="/home" >
-              <img src={logo} alt="Logo da empresa" className='logo'/>
-            </Link>
-            </Box>
-          </Typography>
+    navbar = (
+      <AppBar position="static" className="top-app-bar-container">
+        <Toolbar className="top-toolbar">
+          <Link to="/home">
+            <img src={logo} alt="Logo da empresa" className='logo' />
+          </Link>
           <Search className="search">
             <SearchIconWrapper>
               <SearchIcon />
@@ -147,21 +115,26 @@ function Navbar() {
               inputProps={{ "aria-label": "search" }}
             />
           </Search>
-          {/*icones de login e shopcart */}
-          <PersonIcon className="icones" />
-          <ShoppingCartIcon className="icones" />
-        </Toolbar>
-        <Box className="box-botoes-sobrenos-contato">
-            <Button className="botoes-sobrenos-contato" variant="text" >
-              Sobre nós
+          <Box className="botoesNav">
+            <PersonIcon className="icones" />
+            <ShoppingCartIcon className="icones" />
+            <Link to="/login" className="text-decorator-none cursor">
+              <Button className="texto-logcad botoes-login-cadastro" color="inherit">
+                Entrar
+              </Button>
+            </Link>
+            <Link to="/cadastrousuario" className="text-decorator-none cursor">
+              <Button className="texto-logcad botoes-login-cadastro" color="inherit">
+                Cadastrar
+              </Button>
+            </Link>
+            <Button className="texto-logcad botoes-login-cadastro" variant="text">
+              Contato
             </Button>
-          |{" "}
-          <Button className="botoes-sobrenos-contato-cont" variant="text">
-            Contato 
-          </Button>
-        </Box>
-        <Box className="nav-botoes">
-          <Link  to='/categorias/nome/{lojas}'>
+          </Box>
+        </Toolbar>
+        <Toolbar className="bottom-toolbar botoes-categorias-container nav-botoes">
+        <Link  to='/categorias/nome/{lojas}'>
           <Button variant="text" className="botao-nav">Lojas</Button>
           </Link>
 
@@ -180,125 +153,50 @@ function Navbar() {
           <Link to='/categorias/nome/{comestiveis}' >
           <Button variant="text" className="botao-nav">Comestíveis</Button>
           </Link>
-
-        </Box>
+        </Toolbar>
       </AppBar>
-    </Grid>
+    );
   } else {
-    navbar =
-      <Grid>
-
-        <AppBar position="static" className="top-app-bar-container">
-          <Toolbar className="top-toolbar">
-            <Box className="whatsBox">
-              <Button className="texto-whats botoes-top">
-                <WhatsAppIcon className="iconeWhats" /> Fale conosco via whatsapp
-              </Button>
-            </Box>
-            <Box className="botoesNav">
-              <Link to="/cadastroprodutos" className="text-decorator-none cursor">
-                <Button className="texto-logcad botoes-top" color="inherit">
-                  Cadastro produtos
-                </Button>
-              </Link>
-              |
-              {" "}
-              <Link to="/produtos" className="text-decorator-none cursor">
-                <Button className="texto-logcad botoes-top" color="inherit">
-                  Produtos
-                </Button>
-              </Link>
-              |
-              {" "}
-              <Link to="/cadastrocategoria" className="text-decorator-none cursor">
-                <Button className="texto-logcad botoes-top" color="inherit">
-                  Cadastrar categoria
-                </Button>
-              </Link>
-              |
-              <Link to="/categorias" className="text-decorator-none cursor">
-                <Button className="texto-logcad botoes-top" color="inherit">
-                  Categoria
-                </Button>
-              </Link>
-              |
-              <Link to="/login" className="text-decorator-none cursor">
-                <Button onClick={goLogout} className="texto-logcad botoes-top" color="inherit">
-                  Logout
-                </Button>
-              </Link>{" "}
-            </Box>
-          </Toolbar>
-        </AppBar>
-        { }
-        <AppBar position="static" className="app-bar-container" color="inherit">
-          <Toolbar className="header-toolbar">
-            <Typography
-              variant="h6"
-              noWrap
-              component="div"
-              sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-            >
-              <Link to="/home">
-                <img src={logo} alt="Logo da empresa" className="logo"/>
-              </Link>
-            </Typography>
-            <Search className="search">
-              <SearchIconWrapper>
-                <SearchIcon />
-              </SearchIconWrapper>
-              <StyledInputBase className="buscar"
-                placeholder="Buscar..."
-                inputProps={{ "aria-label": "search" }}
-              />
-            </Search>
-            {/*icones de login e shopcart */}
+    navbar = (
+      <AppBar position="static" className="top-app-bar-container">
+        <Toolbar className="top-toolbar">
+          <Link to="/home">
+            <img src={logo} alt="Logo da empresa" className='logo' />
+          </Link>
+          <Search className="search">
+            <SearchIconWrapper>
+              <SearchIcon />
+            </SearchIconWrapper>
+            <StyledInputBase className="buscar"
+              placeholder="Buscar..."
+              inputProps={{ "aria-label": "search" }}
+            />
+          </Search>
+          <Box className="botoesNav">
             <PersonIcon className="icones" />
             <ShoppingCartIcon className="icones" />
-          </Toolbar>
-          <Box className="box-botoes-sobrenos-contato">
-            <Link to="/sobrenos" className="text-decorator-none cursor">
-              <Button className="botoes-sobrenos-contato" variant="text" >
-                Sobre nós
-              </Button>
-            </Link>{" "}
-            |{" "}
-            <Link to='/contato' className="text-decorator-none cursor">
-            <Button className="botoes-sobrenos-contato-cont" color="inherit">
+            <Button className="texto-logcad botoes-login-cadastro" onClick={goLogout}>
+              Logout
+            </Button>
+            <Button className="botoes-sobrenos-contato" variant="text">
+              Sobre nós
+            </Button>
+            <Button className="botoes-sobrenos-contato" variant="text">
               Contato
             </Button>
-            </Link>
           </Box>
-          <Box className="nav-botoes">
-          <Link  to='/categorias/nome/{acessorios}'>
-          <Button variant="text" className="botao-nav">Acessorios</Button>
-          </Link>
-
-          <Link to={`/categorias/nome/${categoria}`} >
-          <Button variant="text" className="botao-nav">Roupas</Button>
-          </Link>
-
-          <Link to='/categorias/nome/{decoracao}' >
-          <Button variant="text" className="botao-nav">Decoração</Button>
-          </Link>
-
-          <Link to='/categorias/nome/{paracasa}' >
-          <Button variant="text" className="botao-nav">Para Casa</Button>
-          </Link>
-
-          <Link to='/categorias/nome/{presentes}' >
-          <Button variant="text" className="botao-nav">Artesanato</Button>
-          </Link>
-          </Box>
-        </AppBar>
-      </Grid>
+        </Toolbar>
+        <Toolbar className="bottom-toolbar botoes-categorias-container nav-botoes">
+          <Button className="botoes-categorias botao-nav" variant="text">Loja</Button>
+          <Button className="botoes-categorias botao-nav" variant="text">Artesanato</Button>
+          <Button className="botoes-categorias botao-nav" variant="text">Promoção</Button>
+          <Button className="botoes-categorias botao-nav" variant="text">Em alta</Button>
+          <Button className="botoes-categorias botao-nav" variant="text">Comestíveis</Button>
+        </Toolbar>
+      </AppBar>
+    );
   }
-
-  return (
-    <>
-      {navbar}
-    </>
-  );
+  return <>{navbar}</>;
 }
 
 export default Navbar;

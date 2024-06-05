@@ -69,6 +69,8 @@ function App() {
             <Route path="/deletarprodutos/:id" element={<DeletarProdutos />} />
             <Route path="/categorias/nome/:categoria" element={<CategoriaNome />} />
             <Route path="/perfilloja" element={<PerfilLoja/>} />
+            <Route path="/perfilloja/:id" element={<PerfilLoja/>} />
+            <Route path="/categorianome" element={<CategoriaNome/>} />
           </Routes>
           <Footer />
         </Router>

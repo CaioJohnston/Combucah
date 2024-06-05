@@ -14,20 +14,16 @@ export const Produto = () => {
   const [produto, setProduto] = useState<any>(null);
   const [recomendacoes, setRecomendacoes] = useState<any[]>([]);
 
-
   useEffect(() => {
-    // Função para rolar para o topo da página
     const scrollToTop = () => {
-      window.scrollTo({ top: 0});
+      window.scrollTo({ top: 0 });
     };
-
-    scrollToTop(); // Chamada para rolar para o topo ao entrar na página
-  }, [id]); // Monitora mudanças no ID do produto para acionar o efeito
+    scrollToTop();
+  }, [id]);
 
   useEffect(() => {
     if (id) {
       console.log("ID do produto:", id);
-      // Encontrar o produto pelo ID
       const produtoEncontrado = produtosData.find((produto: any) => produto.id === parseInt(id));
       console.log("Produto encontrado:", produtoEncontrado);
       setProduto(produtoEncontrado);
@@ -36,11 +32,8 @@ export const Produto = () => {
 
   useEffect(() => {
     if (produto) {
-      // Gerar recomendações de produtos com IDs diferentes do produto atual
-      const recomendacoesProdutos = produtosData.filter(
-        (p: any) => p.id !== produto.id
-      );
-      setRecomendacoes(recomendacoesProdutos.slice(0, 4)); // Mostrar apenas 4 recomendações
+      const recomendacoesProdutos = produtosData.filter((p: any) => p.id !== produto.id);
+      setRecomendacoes(recomendacoesProdutos.slice(0, 4));
     }
   }, [produto]);
 
@@ -72,56 +65,29 @@ export const Produto = () => {
       <div className="produto">
         <div className="sessaoTopo">
           <div className="imagemProduto">
-            <img
-              className="imagemProdutoPrincipal"
-              src={produto.imagemPrincipal}
-              alt={produto.nome}
-            />
-            <img
-              src={produto.imagemMini1}
-              className="imagemProdutoMini"
-              alt="foto miniatura do produto"
-            />
-            <img
-              src={produto.imagemMini2}
-              className="imagemProdutoMini"
-              alt="foto miniatura do produto"
-            />
-            <img
-              src={produto.imagemMini3}
-              className="imagemProdutoMini"
-              alt="foto miniatura do produto"
-            />
+            <img className="imagemProdutoPrincipal" src={produto.imagemPrincipal} alt={produto.nome} />
+            <img src={produto.imagemMini1} className="imagemProdutoMini" alt="foto miniatura do produto" />
+            <img src={produto.imagemMini2} className="imagemProdutoMini" alt="foto miniatura do produto" />
+            <img src={produto.imagemMini3} className="imagemProdutoMini" alt="foto miniatura do produto" />
           </div>
           <div className="resumoProduto">
             <div className="tituloProduto">
               <h1 className="title">{produto.nome}</h1>
-              <button
-                className="tts-button"
-                onClick={() => handleTextToSpeech(produto.nome)}
-              >
-                🔊
-              </button>
+              <button className="tts-button" onClick={() => handleTextToSpeech(produto.nome)}>🔊</button>
             </div>
             <p className="descricao">{produto.descricao}</p>
             <div className="imagemAnunciante">
-              <Link to="/perfilloja" className="linkImage">
+              <Link to={`/perfilloja/${produto.lojaId}`} className="linkImage">
                 <img className="avatar" src={ygara} alt="avatar"/>
               </Link>
-              <h2 className="nomeAnunciante">
-                {produto.usuario.nome}
-              </h2>
+              <h2 className="nomeAnunciante">{produto.usuario.nome}</h2>
             </div>
             <div className="comprarProduto">
               <h4 className="preco">R${produto.preco.toFixed(2)}</h4>
               <div className="quantidade">
-                <div className="remover" onClick={remover}>
-                  -
-                </div>
+                <div className="remover" onClick={remover}>-</div>
                 <input type="number" value={quantidade} readOnly />
-                <div className="adicionar" onClick={adicionar}>
-                  +
-                </div>
+                <div className="adicionar" onClick={adicionar}>+</div>
               </div>
               <button className="btnComprar">Comprar</button>
               <h4 className="categoria">Categoria: {produto.categoria.nome}</h4>
@@ -134,9 +100,7 @@ export const Produto = () => {
             <div className="conteudoDiv">
               <div className="imagemAnunciante">
                 <img className="avatar" src={ygara} alt="avatar" />
-                <h2 className="nomeAnunciante">
-                  {produto.usuario.nome}
-                </h2>
+                <h2 className="nomeAnunciante">{produto.usuario.nome}</h2>
                 <img src={verificado} alt="selo-feito-a-mao" className="selo" />
               </div>
               <p className="descricao">
@@ -149,22 +113,15 @@ export const Produto = () => {
             </div>
           </div>
           <div className="containerSobrePoliticas">
-            <div className="sobreProduto">
-              <div className="tituloDiv">Sobre o produto</div>
-              <div className="conteudoDiv">
-                <h2 className="tituloSobreProduto nomeAnunciante">
-                  {produto.nome}
-                </h2>
-                <p className="descricao">{produto.descricao}</p>
-              </div>
-            </div>
+            <div className="sobreProduto"></div>
             <div className="politicasEntrega m-l20">
               <div className="tituloDiv">Politicas de entrega</div>
               <div className="conteudoDiv">
                 <h2 className="tituloSobreProduto nomeAnunciante">Produto artesanal</h2>
                 <p className="descricao">
-                  Este é um produto artesanal! Em caso de falta de estoque a sua produção pode levar em média 5 dias. Lembre-se, esté é um produto autêntico amazônico,
-                  produzido por produtores da Ilha do Combu. Sua encomenda pode demorar mais que o normal, mas não se preocupe, a experiência Combucah garante um pedacinho da cultura
+                  Este é um produto artesanal! Em caso de falta de estoque a sua produção pode levar em média 5 dias.
+                  Lembre-se, esté é um produto autêntico amazônico, produzido por produtores da Ilha do Combu. Sua encomenda
+                  pode demorar mais que o normal, mas não se preocupe, a experiência Combucah garante um pedacinho da cultura
                   amazônica sem que você saia de sua casa.
                 </p>
               </div>
@@ -202,7 +159,7 @@ export const Produto = () => {
           <hr className="linha" />
         </div>
         <div className="produtosRecomendados">
-        {recomendacoes.map((produtoRecomendado) => (
+          {recomendacoes.map((produtoRecomendado) => (
             <CardProduto
               key={produtoRecomendado.id}
               nome={produtoRecomendado.nome}
@@ -212,11 +169,8 @@ export const Produto = () => {
               id={produtoRecomendado.id}
             />
           ))}
-          
         </div>
       </div>
     </>
   );
 };
-
-// Componente CardProduto (substitua pelas implementações reais dos cartões de produto)

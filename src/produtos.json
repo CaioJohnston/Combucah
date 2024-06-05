@@ -14,7 +14,8 @@
       },
       "categoria": {
         "nome": "Artesanato"
-      }
+      },
+      "lojaId": 1
     },
     {
       "id": 2,

@@ -9,7 +9,7 @@ import './CardLoja.css';
 function CardLoja({nome, descricao, imagem, id=0} : any) {
   return (
     <div>
-    <Link to="/perfilloja">
+    <Link to={`/perfilloja/${id}`}>
         <Card className="cardLojaContainer">
         <CardActionArea className="cardLojaTopo" >
             <div className="cardLojaImagem">

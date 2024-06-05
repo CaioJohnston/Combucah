@@ -1,113 +1,92 @@
-.top-app-bar-container{
-    height: 35px;
-    border-radius: 0px 0px 25px 25px;
+.top-app-bar-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #e6e7ee!important;
+    background: #e6e7ee !important;
+    flex-direction: column; /* Added to stack the toolbars */
+    border-radius: 0px 0px 25px 25px;
+    margin-bottom: 60px;
 }
-.top-toolbar{
+
+.top-toolbar, .bottom-toolbar {
     display: flex;
-    justify-content: space-between!important;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 100%;
     max-width: 1120px;
 }
 
-.texto-logcad{
+.texto-logcad {
     font-family: 'Inter' !important;
     font-weight: 200;
     font-size: 12px !important;
     text-transform: none !important;
 }
-.botoes-top{
-    width: 100%;
-    color: black!important;
+
+.botoes-top,
+.botoes-login-cadastro {
     text-transform: none;
-}
-.botoes-login-cadastro{
-    width: 100%;
-    color: #4CAF4F!important;
-    text-transform: none;
-    
+    color: #4CAF4F !important;
+    margin-right: 5px !important;
 }
 
-.botoesNav{
-    width: 65%;
+.botoesNav {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     color: #4CAF4F;
-    margin-left: 30%;
 }
 
-/* 2 parte do navbar */
-.app-bar-container{
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    color: #4CAF4F!important;
-    background: transparent!important;
-    box-shadow: none!important;
-}
-.search{
-    margin-right: 24px;
-    margin-top: 10px !important;
-    width: 250px !important;
-    height: 30px !important;
-    border-color: #4CAF4F!important;
-}
-
-.buscar{
-    font-size: 12px !important;
+.app-bar-container {
+    background: #e6e7ee !important;
+    box-shadow: none !important;
+    width: 100%;
     
 }
 
-.box-botoes-sobrenos-contato{
-    color: #4CAF4F!important;
-    max-width: 1120px;
-    width: 100%;
-    margin-top: 5px;
-    margin-right: 90px;
-    display: flex;
-    justify-content: flex-end!important;
-    align-items: center;
-    text-transform: none;
-}
-.botoes-sobrenos-contato {
-    color: #4CAF4F!important;
-    border-radius: 25px!important;
-    width: 120px!important;
-    text-transform: none !important;
-    font-size: 12px !important;
-}
-.botoes-sobrenos-contato-cont {
-    color: #4CAF4F!important;
-    border-radius: 25px!important;
-    width: 80px!important;
-    text-transform: none !important;
-    font-size: 12px !important;
-}
-.header-toolbar{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    max-width: 1120px;
-}
-
-.icones{
+.search {
+    margin-right: auto;
+    width: 460px !important;
+    height: 30px !important;
+    border-color: #4CAF4F !important;
     color: #4CAF4F;
-    margin-right: 20px;
-    margin-left: 5px;
-    font-size: 30px!important;
-    margin-bottom: 5px !important;
-    margin-top: 20px !important;
 }
 
-.nav-botoes{
+.buscar {
+    font-size: 12px !important;
+    color: #4CAF4F;
+}
+
+.icones {
+    color: #4CAF4F;
+    margin-left: 20px;
+    font-size: 30px !important;
+}
+
+.logo {
+    image-rendering: optimizeQuality !important;
+    width: 200px !important;
+    margin-right: auto;
+    margin-left: 20px;
+}
+
+.botoes-sobrenos-contato, .botoes-categorias {
+    color: #4CAF4F !important;
+    border-radius: 25px !important;
+    margin-left: 10px;
+    text-transform: none !important;
+    font-size: 12px !important;
+}
+
+.botoes-categorias-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+
+.nav-botoes {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -116,22 +95,21 @@
     max-width: 1120px;
     margin-bottom: 15px;
     margin-top: 15px;
-    
 }
-.botao-nav{
-    border: 2px solid #4CAF4F!important;
+
+.botao-nav {
+    border: none!important;
     color: #fff!important;
-    border-radius: 20px!important;
+    border-radius: 6px!important;
     width: 120px!important;
     height: 25px!important;
     font-size: 12.5px!important;
     text-transform: none!important;
     background-color: #4CAF4F!important;
+    font-weight: bold!important;
+    transition: box-shadow 0.3s ease;
 }
 
-.logo{
-    image-rendering: optimizeQuality !important;
-    width: 160px !important;
-    margin-top: 30px !important;
-    margin-left: 30px !important;
+.botao-nav:hover, .botao-nav:focus {
+    box-shadow: 0 5px 24px -3px rgba(9, 240, 21, 0.5), inset 0 -48px 24px -48px rgba(255, 255, 255, 0.3);
 }

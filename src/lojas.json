@@ -1,0 +1,86 @@
+[
+    {
+      "id": 1,
+      "nome": "Ygara - Artesanal & Turismo",
+      "descricao": "No Ygara, valorizamos a sustentabilidade e a comunidade local, garantindo que cada produto que você adquire contribua para a preservação do meio ambiente e para o fortalecimento da economia regional. Venha nos visitar e experimente um pedaço da Amazônia em cada detalhe.",
+      "logo": "https://i.imgur.com/xmpKv4C.png",
+      "fundo": "https://i.imgur.com/kGkQIwv.png",
+      "produtos": [
+        {
+          "id": 2,
+          "nome": "Arara",
+          "descricao": "Arara de madeira",
+          "preco": 25.00,
+          "imagem": "https://i.imgur.com/DcZyEQw.png"
+        },
+        {
+          "id": 3,
+          "nome": "Arara Dourada",
+          "descricao": "Essa é rara!",
+          "preco": 50.00,
+          "imagem": "https://i.imgur.com/VjwRyWY.png"
+        },
+        {
+          "id": 4,
+          "nome": "Tucano",
+          "descricao": "Tucano de madeira",
+          "preco": 20.00,
+          "imagem": "https://i.imgur.com/moeWhlq.png"
+        },
+        {
+          "id": 5,
+          "nome": "Brincos",
+          "descricao": "Os mais bonitos da amazônia!",
+          "preco": 40.00,
+          "imagem": "https://i.imgur.com/O4q0efo.jpeg"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "nome": "Boá na Ilha",
+      "descricao": "Descrição da loja Boá na Ilha",
+      "logo": "https://i.imgur.com/c5JsyHR.png",
+      "fundo": "https://i.imgur.com/w3buxhQ.png",
+      "produtos": [
+        {
+          "id": 6,
+          "nome": "Produto Boá 1",
+          "descricao": "Descrição do produto Boá 1",
+          "preco": 30.00,
+          "imagem": "path/to/produtoBoa1.png"
+        },
+        {
+          "id": 7,
+          "nome": "Produto Boá 2",
+          "descricao": "Descrição do produto Boá 2",
+          "preco": 45.00,
+          "imagem": "path/to/produtoBoa2.png"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "nome": "AME Combu",
+      "descricao": "Descrição da loja AME Combu",
+      "logo": "https://i.imgur.com/1aoY0hv.png",
+      "fundo": "path/to/fundoAme.png",
+      "produtos": [
+        {
+          "id": 8,
+          "nome": "Produto AME 1",
+          "descricao": "Descrição do produto AME 1",
+          "preco": 35.00,
+          "imagem": "path/to/produtoAme1.png"
+        },
+        {
+          "id": 9,
+          "nome": "Produto AME 2",
+          "descricao": "Descrição do produto AME 2",
+          "preco": 50.00,
+          "imagem": "path/to/produtoAme2.png"
+        }
+      ]
+    }
+  ]
+  
