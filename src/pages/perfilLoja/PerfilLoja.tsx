@@ -23,40 +23,45 @@ const PerfilLoja = () => {
   }
 
   return (
-    <>
-      <div className='perfil-Loja'>
-        <div className="fotoFundo">
-          <img src={loja.fundo} alt="Foto de Fundo" className="fotoFundoImg" />
-        </div>
-        <div className="sessaoTopo">
-          <div className="descricaoLoja">
-            <div className="logo">
-              <img src={loja.logo} alt={loja.nome} />
-            </div>
-            <div className="bio">
-              <h1>{loja.nome}</h1>
-              <p>{loja.descricao}</p>
-              <img src={verificado} alt="Selo Verificado" className="selo" />
+    <div className='perfil-Loja'>
+      <div className="fotoFundo">
+        <img src={loja.fundo} alt="Foto de Fundo" className="fotoFundoImg" />
+      </div>
+      <div className="sessaoTopo">
+        <div className="descricaoLoja">
+          <div className="logo">
+            <img src={loja.logo} alt={loja.nome} />
+          </div>
+          <div className="bio">
+            <div className="bio-content">
+              <div className="nome-e-selo">
+                <h1>{loja.nome} </h1>
+              </div>
+              <div className="descricao">
+                <p>{loja.descricao}</p>
+              </div>
             </div>
           </div>
         </div>
-        <div className="produtosRecomendados">
-          <h2>Produtos Recomendados</h2>
-          <div className="produtos">
-            {loja.produtos.map((produto: any) => (
-              <CardProduto
-                key={produto.id}
-                nome={produto.nome}
-                descricao={produto.descricao}
-                preco={produto.preco.toFixed(2)}
-                imagem={produto.imagem}
-                id={produto.id}
-              />
-            ))}
-          </div>
+        
+      </div>
+      
+      <div className="produtosRecomendados">
+        <h2>Produtos Recomendados</h2>
+        <div className="produtos">
+          {loja.produtos.map((produto: any) => (
+            <CardProduto
+              key={produto.id}
+              nome={produto.nome}
+              descricao={produto.descricao}
+              preco={produto.preco.toFixed(2)}
+              imagem={produto.imagem}
+              id={produto.id}
+            />
+          ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

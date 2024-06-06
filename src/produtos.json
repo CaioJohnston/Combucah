@@ -32,7 +32,8 @@
       },
       "categoria": {
         "nome": "Artesanato"
-      }
+      },
+      "lojaId": 1
     },
     {
         "id": 3,
@@ -49,7 +50,8 @@
         },
         "categoria": {
           "nome": "Artesanato"
-        }
+        },
+        "lojaId": 1
       },
       {
         "id": 4,
@@ -66,7 +68,8 @@
         },
         "categoria": {
           "nome": "Artesanato"
-        }
+        },
+        "lojaId": 1
       },
       {
         "id": 5,
@@ -83,7 +86,8 @@
         },
         "categoria": {
           "nome": "Artesanato"
-        }
+        },
+        "lojaId": 1
       }
   ]
   
