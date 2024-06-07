@@ -116,7 +116,9 @@ function Navbar() {
             />
           </Search>
           <Box className="botoesNav">
-            <PersonIcon className="icones" />
+            <Link to="/gestao" className="text-decorator-none cursor">
+              <PersonIcon className="icones" />
+            </Link>
             <ShoppingCartIcon className="icones" />
             <Link to="/login" className="text-decorator-none cursor">
               <Button className="texto-logcad botoes-login-cadastro" color="inherit">

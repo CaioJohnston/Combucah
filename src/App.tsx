@@ -21,7 +21,8 @@ import Contato from './pages/contato/Contato';
 import { Produto } from './pages/produto/Produto';
 import CategoriaNome from './components/categorianome/CategoriaNome';
 import PerfilLoja from './pages/perfilLoja/PerfilLoja';
-
+import Gestao from './pages/gestao/gestao';
+ 
 
 function App() {
   useEffect(() => {
@@ -55,6 +56,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path='/home' element={<Home />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/gestao" element={<Gestao />} />
             <Route path="/sobrenos" element={<SobreNos />} />
             <Route path="/contato" element={<Contato />} />
             <Route path="/cadastrousuario" element={<CadastroUsuario />} />
